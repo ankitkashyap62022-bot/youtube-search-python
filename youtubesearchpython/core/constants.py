@@ -1,10 +1,18 @@
 import random
 
+# Original library classes (DO NOT DELETE THESE)
+class ResultMode:
+    dict = 0
+    json = 1
+
+class SearchMode:
+    videos = 'EgIQAQ%3D%3D'
+    channels = 'EgIQAg%3D%3D'
+    playlists = 'EgIQAw%3D%3D'
+
 # ==========================================
 # ☠️ ANU MATRIX ANTI-BAN ENGINE (FIXED) ☠️
 # ==========================================
-
-# Rotating Modern User Agents (YouTube ko lagega real insaan search kr raha ha)
 UAS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
@@ -13,10 +21,4 @@ UAS = [
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Mobile/15E148 Safari/604.1"
 ]
 
-# THE FIX: Variable name exactly as required by the library ('userAgent')
 userAgent = random.choice(UAS)
-
-# Original Constants Needed by the Library
-limit = 0
-searchMode = 0
-searchPreferences = ""
