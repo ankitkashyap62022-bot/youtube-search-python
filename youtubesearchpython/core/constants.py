@@ -1,74 +1,30 @@
-requestPayload = {
-    "context": {
-        "client": {
-            "clientName": "WEB",
-            "clientVersion": "2.20210224.06.00",
-            "newVisitorCookie": True,
-        },
-        "user": {
-            "lockedSafetyMode": False,
-        }
-    }
+import random
+
+# ==========================================
+# ☠️ ANU MATRIX ANTI-BAN ENGINE ☠️
+# ==========================================
+
+# Rotating Modern User Agents (YouTube ko lagega real insaan search kr raha ha)
+UAS = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Mobile/15E148 Safari/604.1"
+]
+
+USER_AGENT = random.choice(UAS)
+
+# Extra Anti-Bot Headers
+HEADERS = {
+    'User-Agent': USER_AGENT,
+    'Accept-Language': 'en-US,en;q=0.9,hi;q=0.8',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1'
 }
-userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'
 
-
-videoElementKey = 'videoRenderer'
-channelElementKey = 'channelRenderer'
-playlistElementKey = 'playlistRenderer'
-shelfElementKey = 'shelfRenderer'
-itemSectionKey = 'itemSectionRenderer'
-continuationItemKey = 'continuationItemRenderer'
-playerResponseKey = 'playerResponse'
-richItemKey = 'richItemRenderer'
-hashtagElementKey = 'hashtagTileRenderer'
-hashtagBrowseKey = 'FEhashtag'
-hashtagVideosPath = ['contents', 'twoColumnBrowseResultsRenderer', 'tabs', 0, 'tabRenderer', 'content', 'richGridRenderer', 'contents']
-hashtagContinuationVideosPath = ['onResponseReceivedActions', 0, 'appendContinuationItemsAction', 'continuationItems']
-searchKey = 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
-contentPath = ['contents', 'twoColumnSearchResultsRenderer', 'primaryContents', 'sectionListRenderer', 'contents']
-fallbackContentPath = ['contents', 'twoColumnSearchResultsRenderer', 'primaryContents', 'richGridRenderer', 'contents']
-continuationContentPath = ['onResponseReceivedCommands', 0, 'appendContinuationItemsAction', 'continuationItems']
-continuationKeyPath = ['continuationItemRenderer', 'continuationEndpoint', 'continuationCommand', 'token']
-playlistInfoPath = ['response', 'sidebar', 'playlistSidebarRenderer', 'items']
-playlistVideosPath = ['response', 'contents', 'twoColumnBrowseResultsRenderer', 'tabs', 0, 'tabRenderer', 'content', 'sectionListRenderer', 'contents', 0, 'itemSectionRenderer', 'contents', 0, 'playlistVideoListRenderer', 'contents']
-playlistPrimaryInfoKey = 'playlistSidebarPrimaryInfoRenderer'
-playlistSecondaryInfoKey = 'playlistSidebarSecondaryInfoRenderer'
-playlistVideoKey = 'playlistVideoRenderer'
-
-
-class ResultMode:
-    json = 0
-    dict = 1
-
-
-class SearchMode:
-    videos = 'EgIQAQ%3D%3D'
-    channels = 'EgIQAg%3D%3D'
-    playlists = 'EgIQAw%3D%3D'
-    livestreams = 'EgJAAQ%3D%3D'
-
-
-class VideoUploadDateFilter:
-    lastHour = 'EgQIARAB'
-    today = 'EgQIAhAB'
-    thisWeek = 'EgQIAxAB'
-    thisMonth = 'EgQIBBAB'
-    thisYear = 'EgQIBRAB'
-
-
-class VideoDurationFilter:
-    short = 'EgQQARgB'
-    long = 'EgQQARgC'
-
-
-class VideoSortOrder:
-    relevance = 'CAASAhAB'
-    uploadDate = 'CAISAhAB'
-    viewCount = 'CAMSAhAB'
-    rating = 'CAESAhAB'
-
-
-class ChannelRequestType:
-    info = "EgVhYm91dA%3D%3D"
-    playlists = "EglwbGF5bGlzdHMYAyABcAA%3D"
+# Original Constants Needed by the Library
+limit = 0
+searchMode = 0
+searchPreferences = ""
